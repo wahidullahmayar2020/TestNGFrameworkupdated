@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends CommonMethods {
 
-    @Test
+    @Test(groups="smoke")
     public void AdminLogin(){
 
         //login to HRMS application
@@ -31,7 +31,7 @@ public class LoginTest extends CommonMethods {
 
     }
 
-@Test(dataProvider ="invalidData")
+@Test(groups="regression",dataProvider ="invalidData")
     public void invalidLoginErrorMessageValidation(String username,String password, String message){
         LoginPage loginPage=new LoginPage();
         sendText(loginPage.usernamebox,username);
